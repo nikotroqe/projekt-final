@@ -1,0 +1,27 @@
+<h2>ToDo List</h2>
+
+<div class="container">
+  <h5>Add list</h5>
+  <div class="row">
+    <div class="col-md-3">
+      <label for="prodname">Product Name</label>
+      <input type="text" [(ngModel)]="prodname" (ngModelChange)="prodname = $event" class="form-control" placeholder="Product Name">
+    </div>
+    <div class="col-md-2">
+      <label for="status">Status</label>
+      <input type="checkbox" [(ngModel)]="status" (ngModelChange)="status = $event" class="form-check-input">
+    </div>
+    <div class="col-md-2">
+      <label for="status">Purchased On</label>
+      <input type="date" [(ngModel)]="date" (ngModelChange)="date = $event" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <label for="price">Price</label>
+      <input type="number" [(ngModel)]="price" (ngModelChange)="price = $event" class="form-control" placeholder="Price">
+    </div>
+    <div class="div col-md-3">
+        <button type="button" class="btn btn-secondary button-width" (click)="addButton()">Add</button>
+    </div>
+      
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class=" border-end">
+            <a class="navbar-brand" href="home">
+                <img 
+                src="https://i.pinimg.com/originals/19/c1/9c/19c19c00ddde609bf93c2a1cf1929dee.png"
+                 width="30px" 
+                 height="30px"
+                 >ToDo App</a>
+        </div>
+        <div class="navbar">
+            <div class="dropdown"> 
+                    <button class="bg-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-Image.png" width="65px" height="50px">
+                    </button>
+                <ul class="dropdown-menu">
+                  <li class="border-bottom">My Profile</li>
+                  <li><button class="dropdown-item" (click)="Logout()" >Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<app-dashboard></app-dashboard> 
+
+<div style="margin: 100px">
+    <app-todo-list (todoList)="addItem($event)"></app-todo-list>
+    <app-todo-table [list]="item" (delete)="deleteItem($event)"></app-todo-table>
+</div>
+
+<footer>
+    <div class="text-center p-4">
+        © Copyright <strong><span>Nikola Troqe</span></strong> 2022. All Rights Reserved
+    </div>
+</footer>

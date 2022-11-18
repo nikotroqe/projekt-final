@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <h1>Login</h1>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" formControlName="email" class="form-control" placeholder="name@gmail.com" [ngClass]="{ 'is-invalid': submitted && x['email'].errors }"/>
+        <div *ngIf="submitted && x['email'].errors" class="invalid-feedback">
+          <span *ngIf="x['email'].errors['required']">Email is required</span>
+          <span *ngIf="x['email'].errors['email']">Email is invalid</span>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" formControlName="password" class="form-control" placeholder="Your Password" [ngClass]="{ 'is-invalid': submitted && x['password'].errors }"/>
+        <div *ngIf="submitted && x['password'].errors" class="invalid-feedback">
+          <span *ngIf="x['password'].errors['required']">Password is required</span>
+        </div>
+      </div>
+  
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input"/>
+        <label for="rememberMe" class="form-check-label">Remember Me</label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary col-12" (click)="onSubmit()">Login</button>
+      </div>
+      <span class="text-margin">
+        Not a member? <a routerLink="/register" routerLinkActive="active">Register</a>
+      </span>  
+    </form>
+</div>  
+

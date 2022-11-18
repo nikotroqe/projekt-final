@@ -1,0 +1,72 @@
+<div class="container">
+    <h2 class="text-center">Dashboard</h2>
+    <div class="row">
+        <div class="card card-body">
+            <div class="top-card text-center">
+                <img src="https://lite.codedthemes.com/mash-able/angular/assets/images/widget/user1.png">
+            </div>
+            <div class="card-contain text-center ">
+                <h5>Gregory Johnes</h5>
+                <p class="text-muted">Califonia, USA</p>
+            </div>
+            <div class="container-col">
+                <div class="row">
+                    <div class="col-3 border-end text-center" >
+                        <p class="text-muted">Followers</p>
+                        <span class="text-primary">{{dashboard.followers}}</span>
+                    </div>
+                    <div class="col-3 border-end text-center">
+                        <p class="text-muted">Following</p>
+                        <span class="text-primary">{{dashboard.following}}</span>
+                    </div>
+                    <div class="col-3 border-end text-center">
+                        <p class="text-muted">Questions</p>
+                        <span class="text-primary">{{dashboard.questions}}</span>
+                    </div>
+                    <div class="col-3 text-center">
+                        <p class="text-muted">Answers</p>
+                        <span class="text-primary">{{dashboard.answers}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button text-center">
+                <div class="row">
+                    <div class="col-6 text-right">
+                        <button class="btn btn-primary" (click)="follow()">{{iamFollowing?'Follow':'Followed'}}</button>
+                    </div>
+                    <div class="col-6 text-right">
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Message</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [formGroup]="messageAdd" (ngSubmit)="onSending()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" >
+            <div class="col-md-8">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="name@gmail.com" [ngClass]="{ 'is-invalid': send && x['email'].errors }">
+                <div *ngIf="send && x['email'].errors" class="invalid-feedback">
+                    <span *ngIf="x['email'].errors['required']">Email is required</span>
+                    <span *ngIf="x['email'].errors['email']">Email is invalid</span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <label for="message">Message</label>
+                <textarea type="text"  class="form-control" formControlName="message" rows="4" cols="60" placeholder="Write a message"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="onSending()">Send</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,31 @@
+<ng-container>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Purchased On</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itemlist; index as i">
+        <td scope="row">{{i + 1}}</td>
+        <td>{{item?.prodname}}
+            
+        </td>
+        <td><button 
+          [ngClass]="{'btn btn-light': item.status || 'btn btn-light'}">{{item?.status && 'Active' || 'Is not Active'}}</button></td>
+        <td>{{item?.date | date: 'dd MMMM yyyy'}}</td>
+        <td>{{item?.price | currency: 'USD'}}</td>
+        <td><button class="btn btn-danger" (click)="deleteItem(item)">
+          <img src="https://icons.veryicon.com/png/o/miscellaneous/iconpack-223/delete-311.png" width="20" height="20"> Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</ng-container>
+

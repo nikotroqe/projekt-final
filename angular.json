@@ -72,7 +72,8 @@
               "browserTarget": "projektfinal1:build:production"
             },
             "development": {
-              "browserTarget": "projektfinal1:build:development"
+              "browserTarget": "projektfinal1:build:development",
+              "port": 4100
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5545170f-9dad-4de2-a17a-acecb5cd4694"
   }
 }

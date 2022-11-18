@@ -1,0 +1,43 @@
+/*Navbar*/
+.navbar{
+    width: 100%;
+}
+
+.navbar-brand{
+   margin-right: 50px;
+    margin-left: 10px;
+    font-weight: bold;
+   
+}
+
+.dropdown{
+    margin-left: 75%;
+    color: white;
+}
+.dropdown-toggle{
+    border-collapse: collapse;
+    border: 0 solid black;
+    color: white;
+}
+
+.dropdown-menu{
+    border-radius: 0px;
+    margin-left: 35%;
+    text-align: center;
+}
+
+
+.button{
+    margin: 20px;
+}
+
+img{
+    margin: 10px;
+}
+
+/*Footer*/
+
+footer{
+    margin-bottom: 0px;
+    background-color: rgb(240, 240, 240);
+}
